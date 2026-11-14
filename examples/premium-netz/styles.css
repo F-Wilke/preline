@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "../../src/plugins/accordion/variants.css";
+@import "../../src/plugins/collapse/variants.css";
+@import "../../src/plugins/overlay/variants.css";
+@source "./index.html";
+@source "./app.js";
+@theme { --color-brand: #007c9c; --color-gold: #c3a15b; --color-ink: #30363c; --font-sans: 'Inter', 'Segoe UI', sans-serif; }
+:root {color-scheme:light; --pn-cyan:#00b5df;--pn-gold:#c3a15b;--pn-charcoal:#30363c}
+html {scroll-behavior:smooth;scroll-padding-top:110px}
+body {font-family:var(--font-sans);color:#30363c;background:#fff;-webkit-font-smoothing:antialiased}
+button,a,input { -webkit-tap-highlight-color:transparent }
+button {cursor:pointer}
+:focus-visible {outline:3px solid #007c9c;outline-offset:4px}
+.wrap {width:min(1200px,calc(100% - 80px));margin-inline:auto}
+.eyebrow {font-size:11px;letter-spacing:.17em;font-weight:700;text-transform:uppercase}
+.btn {display:inline-flex;align-items:center;justify-content:center;gap:12px;border-radius:7px;padding:15px 23px;font-size:13px;font-weight:650;transition:background .18s,transform .18s}
+.btn:hover {transform:translateY(-1px)}
+.btn-primary {background:#007c9c;color:white}.btn-primary:hover{background:#006981}
+.btn-dark {background:#30363c;color:#fff}.btn-dark:hover{background:#171c20}
+.icon {width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.hero-photo {height:510px;width:100%;object-fit:cover;object-position:54% center;border-radius:14px}
+.hero-title {font-size:clamp(48px,4.8vw,69px);line-height:1.08;letter-spacing:-.052em;font-weight:650}
+.section-title {font-size:clamp(30px,3vw,43px);line-height:1.15;letter-spacing:-.035em;font-weight:600}
+.field {display:flex;flex-direction:column;gap:7px;font-size:11px;font-weight:650;color:#505962}
+.field input {font:inherit;font-size:14px;font-weight:400;border:1px solid #d9dfe2;border-radius:6px;padding:13px 14px;background:#fff;min-width:0;width:100%;color:#30363c}
+.field input:focus {outline:2px solid #007c9c;outline-offset:1px}
+.region {border:1px solid #e0e4e7;border-radius:8px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:14px;text-align:left;background:#fff;transition:border-color .2s}
+.region:hover {border-color:#007c9c}
+.benefit {padding:32px 28px;border-right:1px solid #e0e4e7}.benefit:last-child{border-right:0}
+.hs-accordion-toggle .plus {transition:transform .2s}.hs-accordion.active .plus{transform:rotate(45deg)}
+#support-chat {position:fixed;right:26px;bottom:100px;width:380px;z-index:80;max-height:calc(100dvh - 125px);border-radius:14px;box-shadow:0 15px 70px #1c2f3c30;border:1px solid #dbe2e5;background:white;overflow:hidden}
+#support-chat.open {display:flex;flex-direction:column}
+.chat-message {max-width:88%;padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.6;background:#f1f4f5;white-space:pre-wrap}
+.chat-message.outgoing {margin-left:auto;background:#007c9c;color:#fff}
+#chat-log{min-height:160px;max-height:290px;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:20px}
+@media(min-width:1024px){#main-nav{display:flex!important;height:auto!important}}
+@media(max-width:1023px){.wrap{width:calc(100% - 40px)}.hero-title{font-size:54px}.hero-photo{height:420px}#main-nav{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #e0e4e7;padding:0 20px}#main-nav>div{padding:20px 0;display:flex;flex-direction:column;gap:20px}.benefit:nth-child(2){border-right:0}.benefit{border-bottom:1px solid #e0e4e7}}
+@media(max-width:639px){.wrap{width:calc(100% - 36px)}.hero-title{font-size:45px}.hero-photo{height:310px}.section-title{font-size:31px}.benefit{border-right:0;padding:25px 5px}.benefit:last-child{border-bottom:0}#support-chat{right:12px;bottom:86px;width:calc(100% - 24px)}.btn{padding:14px 18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+/* Keep the original white-and-gold wordmark readable on its charcoal header. */
+header {background:#30363c!important;color:#fff;border-color:#ffffff15!important}
+header a:hover{color:#9ce6f6}
+header a[href*="Account/Login"]{border-color:#ffffff30}
+@media(max-width:1023px){#main-nav{background:#30363c!important;border-color:#ffffff20}}
+footer img {background:#30363c;padding:10px 14px;border-radius:5px;width:250px}
